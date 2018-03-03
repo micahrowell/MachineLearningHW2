@@ -20,6 +20,6 @@ def costFunction(theta,x,y):
     grad = [0] * len(theta)
     for i in range(m):
         hyp_theta = sigmoid(theta,x[i])
-        J -= y[i] * npy.log10(hyp_theta) + (1 - y[i]) * npy.log10(1 - hyp_theta)
+        J -= y[i] * npy.log(hyp_theta) + (1 - y[i]) * npy.log(1 - hyp_theta)
     J /= m
     return J, grad
