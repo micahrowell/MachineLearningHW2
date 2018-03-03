@@ -1,4 +1,5 @@
 import numpy as npy
+from sigmoid import *
 
 '''
 COSTFUNCTION Compute cost and gradient for logistic regression
@@ -18,14 +19,7 @@ def costFunction(theta,x,y):
     J = 0
     grad = [0] * len(theta)
     for i in range(m):
-        hyp_theta = hyp(theta,x[i])
+        hyp_theta = sigmoid(theta,x[i])
         J -= y[i] * npy.log10(hyp_theta) + (1 - y[i]) * npy.log10(1 - hyp_theta)
     J /= m
     return J, grad
-
-def hyp(theta,x):
-    e = 2.718281828459
-    exponent = 0
-    for j in range(len(theta)):
-        exponent -= theta[j] * x[j]
-    return 1/(1 + e**exponent)
