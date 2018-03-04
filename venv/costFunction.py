@@ -23,7 +23,8 @@ def costFunction(theta,x,y):
     for i in range(m):
         hyp_theta = sigmoid(theta,x[i])
         J -= y[i] * npy.log(hyp_theta) + (1 - y[i]) * npy.log(1 - hyp_theta)
-        for j in range(n):
+
+        for j in range(n):  # partial derivative
             grad[j] -= y[i] * x[i][j] - x[i][j] * hyp_theta
 
     for k in range(n):
