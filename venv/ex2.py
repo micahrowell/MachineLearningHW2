@@ -29,21 +29,19 @@ y = npy.array(y)
 print 'Plotting data with + indicating (y = 1) examples and o indicating (y = 0) examples.'
 print '\nProgram paused. Exit plot to continue...'
 
-plotData(x,y)
+#plotData(x,y)
 
 m = len(x)
 n = len(x[0])
 theta = [0.0] * (n+1)
 theta = npy.array(theta)
 
-#'''
 cost,grad = costFunction(theta,x1,y)
 
 print '\nCost at initial theta: ' + str(cost)
 print 'Expected cost (approx): 0.693'
 print 'Gradient at initial theta: ' + str(grad)
 print 'Expected gradients (approx): [-0.1, -12.0092, -11.2628]'
-#'''
 
 theta = [-24.0, 0.2, 0.2]
 
